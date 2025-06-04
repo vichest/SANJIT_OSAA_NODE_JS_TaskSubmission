@@ -50,7 +50,8 @@ const Authentication = ({ walletInfo, userData }) => {
 
     setIsValidating(true);
     try {
-      const contract = getContract(walletInfo.provider);
+      // Use signer for all contract calls that need msg.sender
+      const contract = getContract(walletInfo.signer);
       
       // Get user's public key from stored data or contract
       let publicKey = userData.publicKey;
@@ -80,7 +81,7 @@ const Authentication = ({ walletInfo, userData }) => {
         timestamp: new Date().toISOString()
       });
 
-      // Validate OTP without creating a transaction
+      // Validate OTP - this might also need signer depending on contract implementation
       const isValid = await contract.isOTPValid(publicKey, parseInt(otpInput));
       console.log('OTP validation result:', isValid);
       

@@ -33,7 +33,9 @@ const UserRegistration = ({ walletInfo, onRegistrationSuccess }) => {
     
     setIsCheckingRegistration(true);
     try {
-      const contract = getContract(walletInfo.provider);
+      const contract = getContract(walletInfo.signer);
+      const tx = await contract.registerUser(username, publicKey, otpSeed);
+      await tx.wait(); 
       const [retrievedUsername, retrievedPublicKey, retrievedOtpSeed] = await contract.getUserDetails(walletInfo.address);
       
       if (retrievedUsername && retrievedUsername !== '') {
