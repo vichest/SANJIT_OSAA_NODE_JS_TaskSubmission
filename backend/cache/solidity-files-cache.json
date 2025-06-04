@@ -1,0 +1,43 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/Users/sanjitpandit/Desktop/t2 auth/blockchain-2fa-app/backend/contracts/Authentication.sol": {
+      "lastModificationDate": 1749037954982,
+      "contentHash": "5e90582059a3904c3287715d84a58f0e",
+      "sourceName": "contracts/Authentication.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "ITwoFactorAuth",
+        "TwoFactorAuth"
+      ]
+    }
+  }
+}
